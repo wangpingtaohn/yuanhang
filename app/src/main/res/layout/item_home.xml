@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="20dp"
+        android:text="学生入校申请"
+        android:textColor="@color/color_65"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSubTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="提交于： "
+        android:textColor="@color/color_8e"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="@id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <TextView
+        android:id="@+id/tvTotalTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="总耗时： 1小时23分钟"
+        android:textColor="@color/color_8e"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="@id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvSubTime" />
+
+    <TextView
+        android:id="@+id/tvResultTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="办理结果： "
+        android:textColor="@color/color_8e"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="@id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvTotalTime" />
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="成功办理"
+        android:textColor="@color/color_63a379"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toRightOf="@id/tvResultTip"
+        app:layout_constraintTop_toBottomOf="@id/tvTotalTime" />
+
+    <View
+        android:id="@+id/v1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/color_e6"
+        app:layout_constraintTop_toBottomOf="@id/tvResult" />
+
+    <TextView
+        android:id="@+id/tvTrack"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="4dp"
+        android:background="@drawable/shape_b6_stoke_radius18"
+        android:gravity="center"
+        android:paddingHorizontal="15dp"
+        android:text="流程跟踪"
+        android:textColor="@color/color_65"
+        android:textSize="15dp"
+        app:layout_constraintRight_toLeftOf="@id/tvRecord"
+        app:layout_constraintTop_toBottomOf="@id/v1" />
+
+    <TextView
+        android:id="@+id/tvRecord"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="4dp"
+        android:background="@drawable/shape_b6_stoke_radius18"
+        android:gravity="center"
+        android:paddingHorizontal="15dp"
+        android:text="处理记录"
+        android:textColor="@color/color_65"
+        android:textSize="15dp"
+        app:layout_constraintRight_toLeftOf="@id/tvForm"
+        app:layout_constraintTop_toBottomOf="@id/v1" />
+
+    <TextView
+        android:id="@+id/tvForm"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/shape_dc7929_stoke_radius18"
+        android:gravity="center"
+        android:paddingHorizontal="15dp"
+        android:text="查看表单"
+        android:textColor="@color/color_dc7927"
+        android:textSize="15dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v1" />
+
+    <View
+        android:id="@+id/v2"
+        android:layout_width="match_parent"
+        android:layout_height="18dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/color_f2"
+        app:layout_constraintTop_toBottomOf="@id/tvForm" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

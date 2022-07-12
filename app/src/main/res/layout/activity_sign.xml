@@ -1,0 +1,658 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/my_theme">
+
+    <include
+        android:id="@+id/topBar"
+        layout="@layout/layout_base_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="200dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/white"
+                android:drawableLeft="@drawable/ic_tab_apply"
+                android:drawablePadding="6dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:text="在校学生出校申请表"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+
+                android:background="@color/color_f2f5fa"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="学院"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+
+                android:background="@color/color_f2f5fa"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="填表时间"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+
+                android:background="@color/color_f2f5fa"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="姓名"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+
+                android:background="@color/color_f2f5fa"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="学生类别"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/color_f2f5fa"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="学号"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+
+                android:background="@color/color_f2f5fa"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="班级"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+
+                android:background="@color/color_f2f5fa"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="宿舍号"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+
+                android:background="@color/color_f2f5fa"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="电话"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+
+                android:background="@color/color_f2f5fa"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="辅导员"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+
+                android:background="@color/color_f2f5fa"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="辅导员联系电话"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+
+                android:background="@color/color_f2f5fa"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="导师 * "
+                android:textColor="@color/red"
+                android:textSize="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+
+                android:background="@color/color_f2f5fa"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="导师联系电话"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+
+                android:background="@color/color_f2f5fa"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="紧急联系人"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+
+                android:background="@color/color_f2f5fa"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="紧急联系人联系电话"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/color_f2f5fa"
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="出校类型"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+
+                android:background="@color/color_f2f5fa"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="因何原因去往何处及详细行程"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:minHeight="56dp"
+                android:paddingLeft="16dp"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+
+                android:background="@color/color_f2f5fa"
+
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="证明材料"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <ImageView
+                android:id="@+id/iv1"
+                android:layout_width="104dp"
+                android:layout_height="104dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_add_img" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/color_f2f5fa"
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="当日健康宝截图"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tvHealthy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+
+                android:gravity="center_vertical"
+                android:minHeight="56dp"
+                android:paddingLeft="16dp"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/color_f2f5fa"
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="当日行程卡截图"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tvTrack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:minHeight="56dp"
+                android:paddingLeft="16dp"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_f2f5fa"
+                android:gravity="center_vertical"
+                android:lineHeight="20dp"
+                android:paddingVertical="12dp"
+                android:paddingLeft="18dp"
+                android:text="@string/notify_content"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:lineHeight="20dp"
+                android:paddingHorizontal="22dp"
+                android:paddingVertical="16dp"
+                android:text="@string/agree_content"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/color_f2f5fa"
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="申请人签字"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/color_f2f5fa"
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="申请人签字时间"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/color_f2f5fa"
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="辅导员/导师意见"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/color_f2f5fa"
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="辅导员/导师签字"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/color_f2f5fa"
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="辅导员/导师签字时间"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/color_f2f5fa"
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="学院副书记申请意见"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:minHeight="56dp"
+                android:paddingLeft="16dp"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/color_f2f5fa"
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="学院副书记签字"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/color_f2f5fa"
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="副书记签字时间"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/color_f2f5fa"
+                android:gravity="center_vertical"
+                android:paddingLeft="18dp"
+                android:text="计划出校时间"
+                android:textColor="@color/color_65"
+                android:textSize="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:text="预览表单"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/white"
+                android:background="@drawable/shape_4e81d5_radius20"
+                android:layout_width="200dp"
+                android:layout_height="48dp"/>
+        </LinearLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

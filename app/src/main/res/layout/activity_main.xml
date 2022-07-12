@@ -1,13 +1,227 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <WebView
-        android:id="@+id/webView"
+    <include
+        android:id="@+id/topBar"
+        layout="@layout/layout_base_title" />
+
+    <TextView
+        android:id="@+id/tvSearch"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</FrameLayout>
+        android:layout_height="43dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/shape_f2_radius20"
+        android:gravity="center_vertical"
+        android:paddingLeft="45dp"
+        android:text="输入服务名称"
+        android:textColor="@color/color_85"
+        android:textSize="16dp"
+        app:layout_constraintTop_toBottomOf="@id/topBar" />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="18dp"
+        android:src="@drawable/ic_search"
+        app:layout_constraintBottom_toBottomOf="@id/tvSearch"
+        app:layout_constraintLeft_toLeftOf="@id/tvSearch"
+        app:layout_constraintTop_toTopOf="@id/tvSearch" />
+
+    <TextView
+        android:id="@+id/tvAll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="全部"
+        android:textColor="@color/color_89"
+        android:textSize="15dp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tvDoing"
+        app:layout_constraintTop_toBottomOf="@id/tvSearch" />
+
+    <TextView
+        android:id="@+id/tvDoing"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="进行中"
+        android:textColor="@color/color_89"
+        android:textSize="15dp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/tvAll"
+        app:layout_constraintRight_toLeftOf="@id/tvDone"
+        app:layout_constraintTop_toTopOf="@id/tvAll" />
+
+    <TextView
+        android:id="@+id/tvDone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="已完成"
+        android:textColor="@color/color_4e81d5"
+        android:textSize="15dp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/tvDoing"
+        app:layout_constraintRight_toLeftOf="@id/tvReject"
+        app:layout_constraintTop_toTopOf="@id/tvAll" />
+
+    <View
+        android:id="@+id/v1"
+        android:layout_width="40dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/color_4e81d5"
+        app:layout_constraintLeft_toLeftOf="@id/tvDone"
+        app:layout_constraintRight_toRightOf="@id/tvDone"
+        app:layout_constraintTop_toBottomOf="@id/tvDone" />
+
+    <TextView
+        android:id="@+id/tvReject"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="已驳回"
+        android:textColor="@color/color_89"
+        android:textSize="15dp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/tvDone"
+        app:layout_constraintRight_toLeftOf="@id/tvCancel"
+        app:layout_constraintTop_toTopOf="@id/tvAll" />
+
+    <TextView
+        android:id="@+id/tvCancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="已撤销"
+        android:textColor="@color/color_89"
+        android:textSize="15dp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/tvReject"
+        app:layout_constraintRight_toLeftOf="@id/tvDraft"
+        app:layout_constraintTop_toTopOf="@id/tvAll" />
+
+    <TextView
+        android:id="@+id/tvDraft"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="草稿"
+        android:textColor="@color/color_89"
+        android:textSize="15dp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/tvCancel"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvAll" />
+
+    <View
+        android:id="@+id/v2"
+        android:layout_width="match_parent"
+        android:layout_height="18dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/color_f2"
+        app:layout_constraintTop_toBottomOf="@id/v1" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHome"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@id/v3"
+        app:layout_constraintTop_toBottomOf="@id/v2" />
+
+    <!-- 底部tab栏-->
+    <View
+        android:id="@+id/v3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/color_e8"
+        app:layout_constraintBottom_toTopOf="@id/tvHome" />
+
+    <TextView
+        android:id="@+id/tvHome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:drawableTop="@drawable/ic_tab_home"
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:text="首页"
+        android:textColor="@color/color_89"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tvHall" />
+
+    <TextView
+        android:id="@+id/tvHall"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_tab_hall"
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:text="大厅"
+        android:textColor="@color/color_89"
+        android:textSize="15dp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/tvHome"
+        app:layout_constraintRight_toLeftOf="@id/tvApply"
+        app:layout_constraintTop_toTopOf="@id/tvHome" />
+
+    <TextView
+        android:id="@+id/tvApply"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_tab_apply"
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:text="申请"
+        android:textColor="@color/color_4e81d5"
+        android:textSize="15dp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/tvHall"
+        app:layout_constraintRight_toLeftOf="@id/tvTask"
+        app:layout_constraintTop_toTopOf="@id/tvHome" />
+
+    <TextView
+        android:id="@+id/tvTask"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_tab_task"
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:text="任务"
+        android:textColor="@color/color_89"
+        android:textSize="15dp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/tvApply"
+        app:layout_constraintRight_toLeftOf="@id/tvMine"
+        app:layout_constraintTop_toTopOf="@id/tvHome" />
+
+    <TextView
+        android:id="@+id/tvMine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_tab_mine"
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:text="我的"
+        android:textColor="@color/color_89"
+        android:textSize="15dp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/tvTask"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvHome" />
+</androidx.constraintlayout.widget.ConstraintLayout>

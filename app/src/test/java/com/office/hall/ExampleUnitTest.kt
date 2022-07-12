@@ -1,4 +1,4 @@
-package com.wpt.yhcc
+package com.office.hall
 
 import org.junit.Test
 
