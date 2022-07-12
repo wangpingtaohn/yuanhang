@@ -18,6 +18,8 @@ import java.util.*
  */
 class MyAdapter(private var context: Activity): RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
+    var itemClickListener: ItemClickListener? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
 
         val view = LayoutInflater.from(context).inflate(R.layout.item_home, parent, false)
@@ -38,13 +40,14 @@ class MyAdapter(private var context: Activity): RecyclerView.Adapter<MyAdapter.M
             }
         }
         holder.itemView.setOnClickListener {
-            if (position == 2){
-                return@setOnClickListener
-            }
-            context.startActivity(Intent(context,MySignActivity::class.java))
+            itemClickListener?.onItemClick(position)
         }
     }
 
     open class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+
+    interface ItemClickListener {
+        fun onItemClick(position: Int)
+    }
 
 }
