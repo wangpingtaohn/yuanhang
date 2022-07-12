@@ -48,7 +48,6 @@ class MainActivity : BaseActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        /*结果回调*/
         if (requestCode == PictureSelector.SELECT_REQUEST_CODE) {
             if (data != null) {
                 val pictureBean =

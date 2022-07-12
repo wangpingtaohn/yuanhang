@@ -1,12 +1,15 @@
 package com.office.hall
 
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.snackbar.Snackbar
+import com.wildma.pictureselector.PictureBean
+import com.wildma.pictureselector.PictureSelector
 import kotlinx.android.synthetic.main.activity_main.topBar
 import kotlinx.android.synthetic.main.activity_sign.*
 import kotlinx.android.synthetic.main.layout_base_title.view.*
@@ -36,6 +39,9 @@ class MySignActivity : BaseActivity() {
 
     private fun initView(){
         tvPreview.setOnClickListener { showPreviewDialog() }
+        ivHealthy.setOnClickListener { checkPermissions(REQUEST_HEALTHY_CODE) }
+        ivTrack.setOnClickListener { checkPermissions(REQUEST_TRACK_CODE) }
+        ivMaterial.setOnClickListener { checkPermissions(REQUEST_MATERIAL_CODE) }
     }
 
     private fun showPreviewDialog(){
@@ -56,6 +62,37 @@ class MySignActivity : BaseActivity() {
         }
 
         preViewDialog?.show()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        var pictureBean:PictureBean? = null
+        if (data != null) {
+            pictureBean =
+                data.getParcelableExtra<PictureBean>(PictureSelector.PICTURE_RESULT)
+        }
+        if (pictureBean == null){
+            return
+        }
+        val picPath = if (pictureBean.isCut) pictureBean.path else pictureBean.uri.toString()
+        var iv: ImageView? = null
+        when (requestCode) {
+            REQUEST_HEALTHY_CODE -> {
+                iv = ivHealthy
+            }
+            REQUEST_TRACK_CODE -> {
+                iv = ivTrack
+            }
+            REQUEST_MATERIAL_CODE -> {
+                iv = ivMaterial
+            }
+        }
+        if (TextUtils.isEmpty(picPath) || iv == null){
+            return
+        }
+        Glide.with(this)
+            .load(picPath)
+            .apply(RequestOptions.centerCropTransform()).into(iv)
     }
 
 }

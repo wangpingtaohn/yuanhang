@@ -30,7 +30,8 @@
                 android:drawableLeft="@drawable/ic_tab_apply"
                 android:drawablePadding="6dp"
                 android:gravity="center_vertical"
-                android:paddingLeft="16dp"
+                android:paddingLeft="18dp"
+                android:textStyle="bold"
                 android:text="在校学生出校申请表"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
@@ -386,9 +387,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-
                 android:background="@color/color_f2f5fa"
-
                 android:gravity="center_vertical"
                 android:paddingLeft="18dp"
                 android:text="证明材料"
@@ -396,7 +395,7 @@
                 android:textSize="15dp" />
 
             <ImageView
-                android:id="@+id/iv1"
+                android:id="@+id/ivMaterial"
                 android:layout_width="104dp"
                 android:layout_height="104dp"
                 android:layout_marginLeft="16dp"
@@ -413,17 +412,13 @@
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
 
-            <TextView
-                android:id="@+id/tvHealthy"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-
-                android:gravity="center_vertical"
-                android:minHeight="56dp"
-                android:paddingLeft="16dp"
-                android:textColor="@color/color_65"
-                android:textSize="15dp" />
+            <ImageView
+                android:id="@+id/ivHealthy"
+                android:layout_width="104dp"
+                android:layout_height="104dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_add_img" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -435,16 +430,13 @@
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
 
-            <TextView
-                android:id="@+id/tvTrack"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:gravity="center_vertical"
-                android:minHeight="56dp"
-                android:paddingLeft="16dp"
-                android:textColor="@color/color_65"
-                android:textSize="15dp" />
+            <ImageView
+                android:id="@+id/ivTrack"
+                android:layout_width="104dp"
+                android:layout_height="104dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_add_img" />
 
             <TextView
                 android:layout_width="match_parent"

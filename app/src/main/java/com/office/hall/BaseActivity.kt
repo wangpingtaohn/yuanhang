@@ -13,20 +13,31 @@ import com.wildma.pictureselector.PictureSelector
  */
 open class BaseActivity : AppCompatActivity()  {
 
-    //请求状态码
-    private val REQUEST_PERMISSION_CODE = 0x0011
-    //读写权限
-    private val PERMISSIONS_STORAGE = arrayOf(
-        Manifest.permission.READ_EXTERNAL_STORAGE,
-        Manifest.permission.WRITE_EXTERNAL_STORAGE
-    )
-
+    companion object {
+        //请求权限状态码
+        const val REQUEST_PERMISSION_CODE = 0x0011
+        //请求健康码
+        const val REQUEST_HEALTHY_CODE = 0x0022
+        //请求行程码
+        const val REQUEST_TRACK_CODE = 0x0033
+        //请求材料
+        const val REQUEST_MATERIAL_CODE = 0x0044
+        //读写权限
+        val PERMISSIONS_STORAGE = arrayOf(
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+        )
+    }
 
     open fun checkPermissions(){
+        checkPermissions(PictureSelector.SELECT_REQUEST_CODE)
+    }
+
+    open fun checkPermissions(requestCode: Int){
         if (ActivityCompat.checkSelfPermission(this,Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, PERMISSIONS_STORAGE,REQUEST_PERMISSION_CODE)
         } else {
-            openAlbum()
+            openAlbum(requestCode)
         }
     }
 
@@ -38,15 +49,15 @@ open class BaseActivity : AppCompatActivity()  {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == REQUEST_PERMISSION_CODE){
             if(grantResults.isNotEmpty()&&grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                openAlbum()
+                openAlbum(PictureSelector.SELECT_REQUEST_CODE)
             }
         }
     }
 
     //启动相册的方法
-    private fun openAlbum() {
+    private fun openAlbum(requestCode: Int) {
         PictureSelector
-            .create(this, PictureSelector.SELECT_REQUEST_CODE)
+            .create(this, requestCode)
             .selectPicture(false)
     }
 }
