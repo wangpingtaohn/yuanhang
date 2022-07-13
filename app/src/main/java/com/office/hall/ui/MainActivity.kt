@@ -1,8 +1,11 @@
-package com.office.hall
+package com.office.hall.ui
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.office.hall.adapter.MyAdapter
+import com.office.hall.R
+import com.office.hall.base.BaseActivity
 import com.wildma.pictureselector.PictureBean
 import com.wildma.pictureselector.PictureSelector
 import kotlinx.android.synthetic.main.activity_main.*

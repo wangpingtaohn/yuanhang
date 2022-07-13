@@ -10,12 +10,27 @@
         android:id="@+id/topBar"
         layout="@layout/layout_base_title" />
 
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:drawableLeft="@drawable/ic_tab_apply"
+        android:drawablePadding="6dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="18dp"
+        android:text="在校学生出校申请表"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/topBar" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:clipToPadding="false"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topBar">
+        app:layout_constraintTop_toBottomOf="@id/tvTitle">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,27 +38,13 @@
             android:orientation="vertical"
             android:paddingBottom="200dp">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@color/white"
-                android:drawableLeft="@drawable/ic_tab_apply"
-                android:drawablePadding="6dp"
-                android:gravity="center_vertical"
-                android:paddingLeft="18dp"
-                android:textStyle="bold"
-                android:text="在校学生出校申请表"
-                android:textColor="@color/black"
-                android:textSize="15dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-
                 android:background="@color/color_f2f5fa"
-
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="学院"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
@@ -52,29 +53,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
-
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:gravity="center_vertical"
+                android:inputType="none"
                 android:paddingLeft="16dp"
+                android:text="电气与电子工程学院"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-
                 android:background="@color/color_f2f5fa"
-
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="填表时间"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
 
             <EditText
+                android:id="@+id/etSignTime"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
-
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
                 android:textColor="@color/black"
@@ -83,44 +85,46 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-
                 android:background="@color/color_f2f5fa"
-
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="姓名"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
 
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
-
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
+                android:text="李承泽"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-
                 android:background="@color/color_f2f5fa"
-
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="学生类别"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
 
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
-
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
+                android:text="研究生"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
@@ -128,9 +132,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/color_f2f5fa"
-
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="学号"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
@@ -139,20 +142,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
-
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
+                android:text="120202201394"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-
                 android:background="@color/color_f2f5fa"
-
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="班级"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
@@ -161,20 +164,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
-
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
+                android:text="研电2009"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-
                 android:background="@color/color_f2f5fa"
-
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="宿舍号"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
@@ -183,20 +186,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
-
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
+                android:text="4-405"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-
                 android:background="@color/color_f2f5fa"
-
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="电话"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
@@ -205,20 +208,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
-
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
+                android:text="15313982636"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-
                 android:background="@color/color_f2f5fa"
-
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="辅导员"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
@@ -227,20 +230,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
-
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
+                android:text="赵川"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-
                 android:background="@color/color_f2f5fa"
-
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="辅导员联系电话"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
@@ -249,42 +252,42 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
-
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
+                android:text="18800005762"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-
                 android:background="@color/color_f2f5fa"
-
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
-                android:text="导师 * "
-                android:textColor="@color/red"
+                android:paddingLeft="16dp"
+                android:text="导师"
+                android:textColor="@color/color_65"
                 android:textSize="15dp" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
-
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
+                android:text="刘文霞"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-
                 android:background="@color/color_f2f5fa"
-
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="导师联系电话"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
@@ -293,20 +296,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
-
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
+                android:text="18800005762"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-
                 android:background="@color/color_f2f5fa"
-
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="紧急联系人"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
@@ -315,20 +318,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
-
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
+                android:text="刘文霞"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-
                 android:background="@color/color_f2f5fa"
-
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="紧急联系人联系电话"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
@@ -337,9 +340,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
-
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
+                android:text="18800005762"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
@@ -348,7 +353,7 @@
                 android:layout_height="56dp"
                 android:background="@color/color_f2f5fa"
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="出校类型"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
@@ -357,24 +362,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
+                android:text="其他特殊事项出校"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-
                 android:background="@color/color_f2f5fa"
-
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="因何原因去往何处及详细行程"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
 
             <EditText
+                android:id="@+id/etTrack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
@@ -389,54 +396,134 @@
                 android:layout_height="56dp"
                 android:background="@color/color_f2f5fa"
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="证明材料"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
 
-            <ImageView
-                android:id="@+id/ivMaterial"
-                android:layout_width="104dp"
-                android:layout_height="104dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="12dp"
-                android:src="@drawable/ic_add_img" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingVertical="10dp"
+                android:paddingLeft="16dp">
+
+                <ImageView
+                    android:id="@+id/ivMaterial"
+                    android:layout_width="104dp"
+                    android:layout_height="104dp"
+                    android:src="@drawable/ic_add_img" />
+            </FrameLayout>
+
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/color_f2f5fa"
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="当日健康宝截图"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
 
-            <ImageView
-                android:id="@+id/ivHealthy"
-                android:layout_width="104dp"
-                android:layout_height="104dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="12dp"
-                android:src="@drawable/ic_add_img" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/white"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="12dp">
+
+                <TextView
+                    android:id="@+id/tvHealthy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_annex"
+                    android:drawablePadding="@dimen/dp_4"
+                    android:src="@drawable/ic_annex"
+                    android:text="ScreenShot_20220718_182207_c..."
+                    android:textColor="@color/color_3a"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvDownload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="12dp"
+                    android:text="下载"
+                    android:textColor="@color/color_4e81d5"
+                    android:textSize="14dp"
+                    app:layout_constraintRight_toLeftOf="@id/tvPreviewTip"
+                    app:layout_constraintTop_toTopOf="@id/tvPreviewTip" />
+
+                <TextView
+                    android:id="@+id/tvPreviewTip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="预览"
+                    android:textColor="@color/color_4e81d5"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/color_f2f5fa"
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="当日行程卡截图"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
 
-            <ImageView
-                android:id="@+id/ivTrack"
-                android:layout_width="104dp"
-                android:layout_height="104dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="12dp"
-                android:src="@drawable/ic_add_img" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/white"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="12dp">
+
+                <TextView
+                    android:id="@+id/tvTrack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_annex"
+                    android:drawablePadding="@dimen/dp_4"
+                    android:src="@drawable/ic_annex"
+                    android:text="ScreenShot_20220718_182207_c..."
+                    android:textColor="@color/color_3a"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvTrackDownload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="12dp"
+                    android:text="下载"
+                    android:textColor="@color/color_4e81d5"
+                    android:textSize="14dp"
+                    app:layout_constraintRight_toLeftOf="@id/tvTrackPreviewTip"
+                    app:layout_constraintTop_toTopOf="@id/tvTrackPreviewTip" />
+
+                <TextView
+                    android:id="@+id/tvTrackPreviewTip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="预览"
+                    android:textColor="@color/color_4e81d5"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -445,7 +532,7 @@
                 android:gravity="center_vertical"
                 android:lineHeight="20dp"
                 android:paddingVertical="12dp"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="@string/notify_content"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
@@ -467,7 +554,7 @@
                 android:layout_height="56dp"
                 android:background="@color/color_f2f5fa"
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="申请人签字"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
@@ -476,8 +563,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
+                android:text="李承泽"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
@@ -486,12 +576,13 @@
                 android:layout_height="56dp"
                 android:background="@color/color_f2f5fa"
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="申请人签字时间"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
 
             <EditText
+                android:id="@+id/etApplySignTime"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
@@ -505,7 +596,7 @@
                 android:layout_height="56dp"
                 android:background="@color/color_f2f5fa"
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="辅导员/导师意见"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
@@ -514,8 +605,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
+                android:text="同意"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
@@ -524,7 +618,7 @@
                 android:layout_height="56dp"
                 android:background="@color/color_f2f5fa"
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="辅导员/导师签字"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
@@ -533,8 +627,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
+                android:text="赵川"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
@@ -543,12 +640,13 @@
                 android:layout_height="56dp"
                 android:background="@color/color_f2f5fa"
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="辅导员/导师签字时间"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
 
             <EditText
+                android:id="@+id/etTeacherSignTime"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
@@ -562,7 +660,7 @@
                 android:layout_height="56dp"
                 android:background="@color/color_f2f5fa"
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="学院副书记申请意见"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
@@ -571,9 +669,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:gravity="center_vertical"
                 android:minHeight="56dp"
                 android:paddingLeft="16dp"
+                android:text="同意"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
@@ -582,7 +683,7 @@
                 android:layout_height="56dp"
                 android:background="@color/color_f2f5fa"
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="学院副书记签字"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
@@ -591,8 +692,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
+                android:text="张硕"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
@@ -601,12 +705,13 @@
                 android:layout_height="56dp"
                 android:background="@color/color_f2f5fa"
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="副书记签字时间"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
 
             <EditText
+                android:id="@+id/etSecretarySignTime"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
@@ -620,12 +725,13 @@
                 android:layout_height="56dp"
                 android:background="@color/color_f2f5fa"
                 android:gravity="center_vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="16dp"
                 android:text="计划出校时间"
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
 
             <EditText
+                android:id="@+id/etLeftTime"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"

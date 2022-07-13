@@ -1,4 +1,4 @@
-package com.office.hall
+package com.office.hall.bean
 
 /**
  * Author: wpt

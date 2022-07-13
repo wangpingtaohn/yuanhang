@@ -1,4 +1,4 @@
-package com.office.hall
+package com.office.hall.base
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -35,7 +35,7 @@ open class BaseActivity : AppCompatActivity()  {
 
     open fun checkPermissions(requestCode: Int){
         if (ActivityCompat.checkSelfPermission(this,Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, PERMISSIONS_STORAGE,REQUEST_PERMISSION_CODE)
+            ActivityCompat.requestPermissions(this, PERMISSIONS_STORAGE, REQUEST_PERMISSION_CODE)
         } else {
             openAlbum(requestCode)
         }
