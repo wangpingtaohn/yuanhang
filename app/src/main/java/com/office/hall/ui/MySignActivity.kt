@@ -221,7 +221,7 @@ class MySignActivity : BaseActivity() {
             //使用 Glide 加载图片
             Glide.with(this)
                 .load(picPath)
-                .apply(RequestOptions.centerCropTransform()).into(iv)
+                .into(iv)
             iv.setOnClickListener { preViewDialog?.dismiss() }
         }
 
