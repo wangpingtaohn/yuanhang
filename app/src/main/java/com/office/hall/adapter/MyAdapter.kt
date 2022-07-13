@@ -34,12 +34,14 @@ class MyAdapter(private var context: Activity): RecyclerView.Adapter<MyAdapter.M
         val str: String = sdf.format(Date())
         with(holder.itemView){
             tvSubTime.text = String.format("提交于： $str")
-            if (position == 2){
+            if (position == 1){
+                tvTitle.text = "学生出校申请"
+            } else if (position == 2){
                 tvTitle.text = "财务用印申请"
             }
-        }
-        holder.itemView.setOnClickListener {
-            itemClickListener?.onItemClick(position)
+            tvForm.setOnClickListener {
+                itemClickListener?.onItemClick(position)
+            }
         }
     }
 

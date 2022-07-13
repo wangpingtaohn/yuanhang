@@ -89,7 +89,7 @@ class MySignActivity : BaseActivity() {
 
     private fun initView(){
         tvPreview.setOnClickListener { showPreviewDialog() }
-        ivMaterial.setOnClickListener { checkPermissions(REQUEST_MATERIAL_CODE) }
+        ivMaterial.setOnClickListener { openAlbum(REQUEST_MATERIAL_CODE) }
     }
 
     private fun initEditText(){

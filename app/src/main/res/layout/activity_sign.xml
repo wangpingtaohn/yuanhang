@@ -746,11 +746,12 @@
 
     <TextView
         android:id="@+id/tvPreview"
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="60dp"
-        android:background="@drawable/shape_4e81d5_radius20"
+        android:layout_marginBottom="10dp"
+        android:layout_marginHorizontal="@dimen/dp_10"
+        android:background="@drawable/shape_4286f5_radius8"
         android:gravity="center"
         android:text="预览表单"
         android:textColor="@color/white"

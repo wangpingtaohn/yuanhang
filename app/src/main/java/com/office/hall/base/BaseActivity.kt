@@ -31,7 +31,7 @@ open class BaseActivity : AppCompatActivity()  {
         )
     }
 
-    open fun checkPermissions(){
+    /*open fun checkPermissions(){
         checkPermissions(PictureSelector.SELECT_REQUEST_CODE)
     }
 
@@ -41,7 +41,7 @@ open class BaseActivity : AppCompatActivity()  {
         } else {
             openAlbum(requestCode)
         }
-    }
+    }*/
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
@@ -57,7 +57,7 @@ open class BaseActivity : AppCompatActivity()  {
     }
 
     //启动相册的方法
-    private fun openAlbum(requestCode: Int) {
+    open fun openAlbum(requestCode: Int) {
         PictureSelector
             .create(this, requestCode)
             .selectPicture(false)

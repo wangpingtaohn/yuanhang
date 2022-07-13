@@ -32,7 +32,7 @@ class MainActivity : BaseActivity() {
         myAdapter.itemClickListener = object : MyAdapter.ItemClickListener {
             override fun onItemClick(position: Int) {
                 if (position == 2) {
-                    checkPermissions()
+                    openAlbum(PictureSelector.SELECT_REQUEST_CODE)
                 } else {
                     val intent = Intent(this@MainActivity, MySignActivity::class.java)
                     startActivity(intent)
