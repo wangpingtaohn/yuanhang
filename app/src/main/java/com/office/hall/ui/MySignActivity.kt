@@ -31,8 +31,6 @@ class MySignActivity : BaseActivity() {
         const val TRACK = "track"
     }
 
-    private var picPath: String? = null
-
     private var preViewDialog: Dialog? = null
 
     private var mEnable = false
@@ -57,7 +55,6 @@ class MySignActivity : BaseActivity() {
     }
 
     private fun initData(){
-        picPath = intent.getStringExtra("pic")
         val signTime = SpUtils.getString(this, Sign_Time)
         if (!TextUtils.isEmpty(signTime)){
             etSignTime.text = Editable.Factory.getInstance().newEditable(signTime)
@@ -209,8 +206,9 @@ class MySignActivity : BaseActivity() {
     }
 
     private fun showPreviewDialog(){
+        val picPath = SpUtils.getString(this,PREVIEW_PIC_PATH)
         if (TextUtils.isEmpty(picPath)){
-            Snackbar.make(signRootView,"没有找相关的表单可预览",Snackbar.LENGTH_SHORT).show()
+            Snackbar.make(signRootView,"没有相关的表单可预览",Snackbar.LENGTH_SHORT).show()
             return
         }
         if (preViewDialog == null){

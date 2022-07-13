@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.office.hall.adapter.MyAdapter
 import com.office.hall.R
 import com.office.hall.base.BaseActivity
+import com.office.hall.utils.SpUtils
 import com.wildma.pictureselector.PictureBean
 import com.wildma.pictureselector.PictureSelector
 import kotlinx.android.synthetic.main.activity_main.*
@@ -13,8 +14,6 @@ import kotlinx.android.synthetic.main.layout_base_title.view.*
 
 class MainActivity : BaseActivity() {
 
-
-    private var picPath: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +35,6 @@ class MainActivity : BaseActivity() {
                     checkPermissions()
                 } else {
                     val intent = Intent(this@MainActivity, MySignActivity::class.java)
-                    intent.putExtra("pic",picPath)
                     startActivity(intent)
                 }
             }
@@ -55,7 +53,8 @@ class MainActivity : BaseActivity() {
             if (data != null) {
                 val pictureBean =
                     data.getParcelableExtra<PictureBean>(PictureSelector.PICTURE_RESULT)
-                picPath = if (pictureBean!!.isCut) pictureBean.path else pictureBean.uri.toString()
+                val picPath = if (pictureBean!!.isCut) pictureBean.path else pictureBean.uri.toString()
+                SpUtils.putString(this,PREVIEW_PIC_PATH,picPath)
             }
         }
     }

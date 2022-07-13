@@ -22,6 +22,8 @@ open class BaseActivity : AppCompatActivity()  {
         const val REQUEST_TRACK_CODE = 0x0033
         //请求材料
         const val REQUEST_MATERIAL_CODE = 0x0044
+        //预览图片路径
+        const val PREVIEW_PIC_PATH = "preViewPicPath"
         //读写权限
         val PERMISSIONS_STORAGE = arrayOf(
             Manifest.permission.READ_EXTERNAL_STORAGE,
