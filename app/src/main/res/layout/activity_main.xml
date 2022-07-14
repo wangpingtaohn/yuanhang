@@ -15,30 +15,29 @@
     <EditText
         android:id="@+id/etName"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_56"
-        android:layout_marginHorizontal="@dimen/dp_16"
-        android:layout_marginTop="@dimen/dp_20"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/shape_f2_radius20"
         android:hint="请输入姓名"
-        android:paddingLeft="@dimen/dp_16"
+        android:paddingLeft="16dp"
         app:layout_constraintTop_toBottomOf="@id/topBar" />
 
     <ImageView
         android:id="@+id/ivAdd1"
-        android:layout_width="@dimen/dp_108"
-        android:layout_height="@dimen/dp_108"
-        android:layout_marginTop="@dimen/dp_12"
+        android:layout_width="108dp"
+        android:layout_height="108dp"
+        android:layout_marginTop="12dp"
         android:src="@drawable/ic_add_img"
         app:layout_constraintLeft_toLeftOf="@id/etName"
         app:layout_constraintTop_toBottomOf="@id/etName" />
 
     <ImageView
         android:id="@+id/ivAdd2"
-        android:layout_width="@dimen/dp_108"
-        android:layout_height="@dimen/dp_108"
-        android:layout_marginLeft="@dimen/dp_20"
-        android:layout_marginTop="@dimen/dp_12"
-        android:src="@drawable/ic_add_img"
+        android:layout_width="108dp"
+        android:layout_height="108dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintLeft_toRightOf="@id/ivAdd1"
         app:layout_constraintTop_toBottomOf="@id/etName" />
 
@@ -47,14 +46,14 @@
         android:layout_width="200dp"
         android:layout_height="48dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="100dp"
         android:background="@drawable/shape_4e81d5_radius20"
         android:gravity="center"
         android:text="合成"
         android:textColor="@color/white"
         android:textSize="16dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/ivAdd1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 

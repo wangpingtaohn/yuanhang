@@ -4,7 +4,6 @@ import android.Manifest
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import com.wildma.pictureselector.PictureSelector
 
 /**
  * Author: wpt
@@ -27,35 +26,5 @@ open class BaseActivity : AppCompatActivity()  {
             Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE
         )
-    }
-
-    open fun checkPermissions(){
-        checkPermissions(PictureSelector.SELECT_REQUEST_CODE)
-    }
-
-    open fun checkPermissions(requestCode: Int){
-        if (ActivityCompat.checkSelfPermission(this,Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, PERMISSIONS_STORAGE, requestCode)
-        } else {
-            openAlbum(requestCode)
-        }
-    }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-            if(grantResults.isNotEmpty()&&grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                openAlbum(requestCode)
-            }
-    }
-
-    //启动相册的方法
-    private fun openAlbum(requestCode: Int) {
-        PictureSelector
-            .create(this, requestCode)
-            .selectPicture(false)
     }
 }

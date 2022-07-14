@@ -9,6 +9,7 @@ import android.graphics.drawable.ColorDrawable
 import android.text.TextUtils
 import android.view.Window
 import android.view.WindowManager
+import android.widget.ImageView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.dialog_pic.*
 
@@ -34,6 +35,7 @@ class FullScreenDialog(
             WindowManager.LayoutParams.MATCH_PARENT,
             WindowManager.LayoutParams.MATCH_PARENT
         )
+        view.findViewById<ImageView>(R.id.ivClose).setOnClickListener { dismiss() }
         initView()
     }
 
