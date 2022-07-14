@@ -1,10 +1,9 @@
-package com.office.hall.base
+package com.weilin.screenshot.base
 
 import android.Manifest
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import com.wildma.pictureselector.PictureSelectUtils
 import com.wildma.pictureselector.PictureSelector
 
 /**
@@ -36,7 +35,7 @@ open class BaseActivity : AppCompatActivity()  {
 
     open fun checkPermissions(requestCode: Int){
         if (ActivityCompat.checkSelfPermission(this,Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, PERMISSIONS_STORAGE, REQUEST_PERMISSION_CODE)
+            ActivityCompat.requestPermissions(this, PERMISSIONS_STORAGE, requestCode)
         } else {
             openAlbum(requestCode)
         }
@@ -48,11 +47,9 @@ open class BaseActivity : AppCompatActivity()  {
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == REQUEST_PERMISSION_CODE){
             if(grantResults.isNotEmpty()&&grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                openAlbum(PictureSelector.SELECT_REQUEST_CODE)
+                openAlbum(requestCode)
             }
-        }
     }
 
     //启动相册的方法

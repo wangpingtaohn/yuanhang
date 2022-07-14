@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.office.hall">
+    package="com.weilin.screenshot">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.myTheme">
         <activity
-            android:name="com.office.hall.ui.MainActivity"
+            android:name="com.weilin.screenshot.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,9 +20,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.MySignActivity"/>
-        <activity android:name=".ui.MergeActivity"
-            android:theme="@style/Theme.AppCompat.Dialog"/>
     </application>
 
 </manifest>

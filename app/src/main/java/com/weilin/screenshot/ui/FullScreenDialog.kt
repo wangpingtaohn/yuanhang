@@ -1,10 +1,10 @@
-package com.office.hall.ui
+package com.weilin.screenshot.ui
 
 import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
-import com.office.hall.R
+import com.weilin.screenshot.R
 import android.graphics.drawable.ColorDrawable
 import android.text.TextUtils
 import android.view.Window

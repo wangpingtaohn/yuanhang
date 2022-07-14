@@ -1,4 +1,4 @@
-package com.office.hall.utils;
+package com.weilin.screenshot.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;

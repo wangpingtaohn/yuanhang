@@ -1,11 +1,11 @@
-package com.office.hall.adapter
+package com.weilin.screenshot.adapter
 
 import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.office.hall.R
+import com.weilin.screenshot.R
 import kotlinx.android.synthetic.main.item_home.view.*
 import java.text.SimpleDateFormat
 import java.util.*

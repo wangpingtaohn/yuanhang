@@ -1,4 +1,4 @@
-package com.office.hall
+package com.weilin.screenshot
 
 import org.junit.Test
 

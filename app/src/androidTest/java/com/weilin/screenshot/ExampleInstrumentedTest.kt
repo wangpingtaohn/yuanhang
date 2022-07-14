@@ -1,4 +1,4 @@
-package com.office.hall
+package com.weilin.screenshot
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

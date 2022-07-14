@@ -1,4 +1,4 @@
-package com.office.hall.bean
+package com.weilin.screenshot.bean
 
 /**
  * Author: wpt
