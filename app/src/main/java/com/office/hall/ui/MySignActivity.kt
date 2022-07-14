@@ -2,10 +2,13 @@ package com.office.hall.ui
 
 import android.app.Dialog
 import android.content.Intent
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
+import android.view.Window
+import android.view.WindowManager
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -212,15 +215,14 @@ class MySignActivity : BaseActivity() {
             return
         }
         if (preViewDialog == null){
-            preViewDialog = Dialog(this)
-            preViewDialog?.setContentView(R.layout.dialog_pic)
-            preViewDialog?.setCanceledOnTouchOutside(true)
+            preViewDialog = FullScreenDialog(this,picPath)
+            /*preViewDialog?.setContentView(R.layout.dialog_pic)
             val iv = preViewDialog!!.findViewById<ImageView>(R.id.ivPic)
             //使用 Glide 加载图片
             Glide.with(this)
                 .load(picPath)
                 .into(iv)
-            iv.setOnClickListener { preViewDialog?.dismiss() }
+            iv.setOnClickListener { preViewDialog?.dismiss() }*/
         }
 
         preViewDialog?.show()

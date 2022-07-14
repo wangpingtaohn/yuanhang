@@ -30,19 +30,42 @@ class MyAdapter(private var context: Activity): RecyclerView.Adapter<MyAdapter.M
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
-        val str: String = sdf.format(Date())
         with(holder.itemView){
-            tvSubTime.text = String.format("提交于： $str")
-            if (position == 1){
-                tvTitle.text = "学生出校申请"
-            } else if (position == 2){
-                tvTitle.text = "财务用印申请"
+            var timeStr = stampToDate(System.currentTimeMillis())
+            var totalTime: String? = null
+            when (position) {
+                0 -> {
+                    timeStr = stampToDate(System.currentTimeMillis() - 2 * 60 * 60 * 1000)
+                    totalTime = "1小时20分"
+                }
+                1 -> {
+                    timeStr = stampToDate(System.currentTimeMillis() - 5 * 60 * 60 * 1000)
+                    tvTitle.text = "学生出校申请"
+                    totalTime = "1小时05分"
+                }
+                2 -> {
+                    tvTitle.text = "财务用印申请"
+                    totalTime = "2小时10分"
+                }
             }
+            tvSubTime.text = String.format("提交于： $timeStr")
+            tvTotalTime.text = totalTime
             tvForm.setOnClickListener {
                 itemClickListener?.onItemClick(position)
             }
         }
+    }
+
+    /*
+     * 将时间戳转换为时间
+     */
+    fun stampToDate(s: Long): String? {
+        val res: String
+        val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+        val lt: Long = s
+        val date = Date(lt)
+        res = simpleDateFormat.format(date)
+        return res
     }
 
     open class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
