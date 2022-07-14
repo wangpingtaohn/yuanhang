@@ -20,7 +20,7 @@
         android:gravity="center_vertical"
         android:paddingLeft="18dp"
         android:text="在校学生出校申请表"
-        android:textColor="@color/black"
+        android:textColor="@color/color_666"
         android:textSize="15dp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/topBar" />
@@ -59,7 +59,7 @@
                 android:inputType="none"
                 android:paddingLeft="16dp"
                 android:text="电气与电子工程学院"
-                android:textColor="@color/black"
+                android:textColor="@color/color_666"
                 android:textSize="15dp" />
 
             <TextView
@@ -73,13 +73,14 @@
                 android:textSize="15dp" />
 
             <EditText
+                android:inputType="datetime"
                 android:id="@+id/etSignTime"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
-                android:textColor="@color/black"
+                android:textColor="@color/color_666"
                 android:textSize="15dp" />
 
             <TextView
@@ -102,7 +103,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
                 android:text="李承泽"
-                android:textColor="@color/black"
+                android:textColor="@color/color_666"
                 android:textSize="15dp" />
 
             <TextView
@@ -125,7 +126,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
                 android:text="研究生"
-                android:textColor="@color/black"
+                android:textColor="@color/color_666"
                 android:textSize="15dp" />
 
             <TextView
@@ -147,7 +148,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
                 android:text="120202201394"
-                android:textColor="@color/black"
+                android:textColor="@color/color_666"
                 android:textSize="15dp" />
 
             <TextView
@@ -169,7 +170,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
                 android:text="研电2009"
-                android:textColor="@color/black"
+                android:textColor="@color/color_666"
                 android:textSize="15dp" />
 
             <TextView
@@ -191,7 +192,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
                 android:text="4-405"
-                android:textColor="@color/black"
+                android:textColor="@color/color_666"
                 android:textSize="15dp" />
 
             <TextView
@@ -213,7 +214,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
                 android:text="15313982636"
-                android:textColor="@color/black"
+                android:textColor="@color/color_666"
                 android:textSize="15dp" />
 
             <TextView
@@ -235,7 +236,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
                 android:text="赵川"
-                android:textColor="@color/black"
+                android:textColor="@color/color_666"
                 android:textSize="15dp" />
 
             <TextView
@@ -257,7 +258,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
                 android:text="18800005762"
-                android:textColor="@color/black"
+                android:textColor="@color/color_666"
                 android:textSize="15dp" />
 
             <TextView
@@ -279,7 +280,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
                 android:text="刘文霞"
-                android:textColor="@color/black"
+                android:textColor="@color/color_666"
                 android:textSize="15dp" />
 
             <TextView
@@ -301,7 +302,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
                 android:text="18800005762"
-                android:textColor="@color/black"
+                android:textColor="@color/color_666"
                 android:textSize="15dp" />
 
             <TextView
@@ -323,7 +324,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
                 android:text="刘文霞"
-                android:textColor="@color/black"
+                android:textColor="@color/color_666"
                 android:textSize="15dp" />
 
             <TextView
@@ -345,7 +346,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
                 android:text="18800005762"
-                android:textColor="@color/black"
+                android:textColor="@color/color_666"
                 android:textSize="15dp" />
 
             <TextView
@@ -367,7 +368,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
                 android:text="其他特殊事项出校"
-                android:textColor="@color/black"
+                android:textColor="@color/color_666"
                 android:textSize="15dp" />
 
             <TextView
@@ -388,7 +389,7 @@
                 android:gravity="center_vertical"
                 android:minHeight="56dp"
                 android:paddingLeft="16dp"
-                android:textColor="@color/black"
+                android:textColor="@color/color_666"
                 android:textSize="15dp" />
 
             <TextView
@@ -565,10 +566,10 @@
                 android:background="@color/white"
                 android:focusable="false"
                 android:focusableInTouchMode="false"
-                android:gravity="center_vertical"
+                android:gravity="center"
                 android:paddingLeft="16dp"
                 android:text="李承泽"
-                android:textColor="@color/black"
+                android:textColor="@color/color_666"
                 android:textSize="15dp" />
 
             <TextView
@@ -582,13 +583,14 @@
                 android:textSize="15dp" />
 
             <EditText
+                android:inputType="datetime"
                 android:id="@+id/etApplySignTime"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
-                android:textColor="@color/black"
+                android:textColor="@color/color_666"
                 android:textSize="15dp" />
 
             <TextView
@@ -610,7 +612,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
                 android:text="同意"
-                android:textColor="@color/black"
+                android:textColor="@color/color_666"
                 android:textSize="15dp" />
 
             <TextView
@@ -632,7 +634,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
                 android:text="赵川"
-                android:textColor="@color/black"
+                android:textColor="@color/color_666"
                 android:textSize="15dp" />
 
             <TextView
@@ -646,13 +648,14 @@
                 android:textSize="15dp" />
 
             <EditText
+                android:inputType="datetime"
                 android:id="@+id/etTeacherSignTime"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
-                android:textColor="@color/black"
+                android:textColor="@color/color_666"
                 android:textSize="15dp" />
 
             <TextView
@@ -675,7 +678,7 @@
                 android:minHeight="56dp"
                 android:paddingLeft="16dp"
                 android:text="同意"
-                android:textColor="@color/black"
+                android:textColor="@color/color_666"
                 android:textSize="15dp" />
 
             <TextView
@@ -696,8 +699,8 @@
                 android:focusableInTouchMode="false"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
-                android:text="张硕"
-                android:textColor="@color/black"
+                android:text="王硕"
+                android:textColor="@color/color_666"
                 android:textSize="15dp" />
 
             <TextView
@@ -711,13 +714,14 @@
                 android:textSize="15dp" />
 
             <EditText
+                android:inputType="datetime"
                 android:id="@+id/etSecretarySignTime"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
-                android:textColor="@color/black"
+                android:textColor="@color/color_666"
                 android:textSize="15dp" />
 
             <TextView
@@ -731,13 +735,14 @@
                 android:textSize="15dp" />
 
             <EditText
+                android:inputType="datetime"
                 android:id="@+id/etLeftTime"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/white"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
-                android:textColor="@color/black"
+                android:textColor="@color/color_666"
                 android:textSize="15dp" />
 
         </LinearLayout>

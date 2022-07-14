@@ -34,7 +34,11 @@ class MainActivity : BaseActivity() {
                 if (position == 2) {
                     openAlbum(PictureSelector.SELECT_REQUEST_CODE)
                 } else {
-                    val intent = Intent(this@MainActivity, MySignActivity::class.java)
+                    val intent = Intent(
+                        this@MainActivity, if (position == 1) {
+                            LeaveSignActivity::class.java
+                        } else BackSignActivity::class.java
+                    )
                     startActivity(intent)
                 }
             }

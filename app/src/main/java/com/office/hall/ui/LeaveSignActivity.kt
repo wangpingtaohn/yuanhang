@@ -2,14 +2,10 @@ package com.office.hall.ui
 
 import android.app.Dialog
 import android.content.Intent
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
-import android.view.Window
-import android.view.WindowManager
-import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.snackbar.Snackbar
@@ -18,11 +14,14 @@ import com.office.hall.base.BaseActivity
 import com.office.hall.utils.SpUtils
 import com.wildma.pictureselector.PictureBean
 import com.wildma.pictureselector.PictureSelector
+import kotlinx.android.synthetic.main.activity_leave_sign.*
 import kotlinx.android.synthetic.main.activity_main.topBar
-import kotlinx.android.synthetic.main.activity_sign.*
 import kotlinx.android.synthetic.main.layout_base_title.view.*
 
-class MySignActivity : BaseActivity() {
+/**
+ * 离校
+ */
+class LeaveSignActivity : BaseActivity() {
 
     companion object {
         const val MATERIAL_PIC_PATH = "materialPicPath"
@@ -40,7 +39,7 @@ class MySignActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign)
+        setContentView(R.layout.activity_leave_sign)
         initTopBar()
         initData()
         initView()
@@ -107,7 +106,7 @@ class MySignActivity : BaseActivity() {
                 if (s == null){
                     return
                 }
-                SpUtils.putString(this@MySignActivity, Sign_Time,s.toString())
+                SpUtils.putString(this@LeaveSignActivity, Sign_Time,s.toString())
             }
 
         })
@@ -122,7 +121,7 @@ class MySignActivity : BaseActivity() {
                 if (s == null){
                     return
                 }
-                SpUtils.putString(this@MySignActivity, APPLY_SIGN_TIME,s.toString())
+                SpUtils.putString(this@LeaveSignActivity, APPLY_SIGN_TIME,s.toString())
             }
 
         })
@@ -137,7 +136,7 @@ class MySignActivity : BaseActivity() {
                 if (s == null){
                     return
                 }
-                SpUtils.putString(this@MySignActivity, TEACHER_SIGN_TIME,s.toString())
+                SpUtils.putString(this@LeaveSignActivity, TEACHER_SIGN_TIME,s.toString())
             }
 
         })
@@ -152,7 +151,7 @@ class MySignActivity : BaseActivity() {
                 if (s == null){
                     return
                 }
-                SpUtils.putString(this@MySignActivity, SECRETARY_SIGN_TIME,s.toString())
+                SpUtils.putString(this@LeaveSignActivity, SECRETARY_SIGN_TIME,s.toString())
             }
 
         })
@@ -167,7 +166,7 @@ class MySignActivity : BaseActivity() {
                 if (s == null){
                     return
                 }
-                SpUtils.putString(this@MySignActivity, LEFT_TIME,s.toString())
+                SpUtils.putString(this@LeaveSignActivity, LEFT_TIME,s.toString())
             }
 
         })
@@ -182,7 +181,7 @@ class MySignActivity : BaseActivity() {
                 if (s == null){
                     return
                 }
-                SpUtils.putString(this@MySignActivity, TRACK,s.toString())
+                SpUtils.putString(this@LeaveSignActivity, TRACK,s.toString())
             }
 
         })
@@ -216,13 +215,6 @@ class MySignActivity : BaseActivity() {
         }
         if (preViewDialog == null){
             preViewDialog = FullScreenDialog(this,picPath)
-            /*preViewDialog?.setContentView(R.layout.dialog_pic)
-            val iv = preViewDialog!!.findViewById<ImageView>(R.id.ivPic)
-            //使用 Glide 加载图片
-            Glide.with(this)
-                .load(picPath)
-                .into(iv)
-            iv.setOnClickListener { preViewDialog?.dismiss() }*/
         }
 
         preViewDialog?.show()
