@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="14dp"
         android:text="学生入校申请"
         android:textColor="@color/color_65"
         android:textSize="15sp"
@@ -21,7 +21,7 @@
         android:id="@+id/tvSubTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="22dp"
         android:text="提交于： "
         android:textColor="@color/color_8e"
         android:textSize="15sp"
@@ -119,7 +119,7 @@
     <View
         android:id="@+id/v2"
         android:layout_width="match_parent"
-        android:layout_height="18dp"
+        android:layout_height="14dp"
         android:layout_marginTop="12dp"
         android:background="@color/color_f2"
         app:layout_constraintTop_toBottomOf="@id/tvForm" />
