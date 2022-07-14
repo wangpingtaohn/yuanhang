@@ -1,14 +1,20 @@
 package com.office.hall.ui
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
+import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.luck.picture.lib.basic.PictureSelector
+import com.luck.picture.lib.config.SelectMimeType
+import com.luck.picture.lib.config.SelectModeConfig
+import com.luck.picture.lib.entity.LocalMedia
+import com.luck.picture.lib.interfaces.OnResultCallbackListener
 import com.office.hall.adapter.MyAdapter
 import com.office.hall.R
 import com.office.hall.base.BaseActivity
 import com.office.hall.utils.SpUtils
-import com.wildma.pictureselector.PictureBean
-import com.wildma.pictureselector.PictureSelector
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.layout_base_title.view.*
 
@@ -32,7 +38,7 @@ class MainActivity : BaseActivity() {
         myAdapter.itemClickListener = object : MyAdapter.ItemClickListener {
             override fun onItemClick(position: Int) {
                 if (position == 2) {
-                    openAlbum(PictureSelector.SELECT_REQUEST_CODE)
+                    checkPermissions()
                 } else {
                     val intent = Intent(
                         this@MainActivity, if (position == 1) {
@@ -51,15 +57,39 @@ class MainActivity : BaseActivity() {
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == PictureSelector.SELECT_REQUEST_CODE) {
-            if (data != null) {
-                val pictureBean =
-                    data.getParcelableExtra<PictureBean>(PictureSelector.PICTURE_RESULT)
-                val picPath = if (pictureBean!!.isCut) pictureBean.path else pictureBean.uri.toString()
-                SpUtils.putString(this,PREVIEW_PIC_PATH,picPath)
-            }
+    private fun checkPermissions(){
+        if (ActivityCompat.checkSelfPermission(this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, PERMISSIONS_STORAGE, REQUEST_PERMISSION_CODE)
+        } else {
+            openAlbum()
         }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if(grantResults.isNotEmpty()&&grantResults[0] == PackageManager.PERMISSION_GRANTED){
+            openAlbum()
+        }
+    }
+
+    private fun openAlbum(){
+        PictureSelector.create(this)
+            .openSystemGallery(SelectMimeType.ofImage())
+            .setSelectionMode(SelectModeConfig.SINGLE)
+            .forSystemResult(object : OnResultCallbackListener<LocalMedia?> {
+                override fun onResult(result: ArrayList<LocalMedia?>?) {
+                    if (result == null || result.isEmpty()){
+                        return
+                    }
+                    val localMedia1 = result[0]
+                    SpUtils.putString(this@MainActivity,PREVIEW_PIC_PATH,localMedia1?.path)
+                }
+                override fun onCancel() {}
+            })
     }
 }

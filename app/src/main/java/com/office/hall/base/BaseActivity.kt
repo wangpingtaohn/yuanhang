@@ -4,7 +4,12 @@ import android.Manifest
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import com.wildma.pictureselector.PictureSelector
+import com.luck.picture.lib.basic.PictureSelector
+import com.luck.picture.lib.config.SelectMimeType
+import com.luck.picture.lib.config.SelectModeConfig
+import com.luck.picture.lib.entity.LocalMedia
+import com.luck.picture.lib.interfaces.OnResultCallbackListener
+import com.office.hall.utils.SpUtils
 
 /**
  * Author: wpt
@@ -31,17 +36,14 @@ open class BaseActivity : AppCompatActivity()  {
         )
     }
 
-    /*open fun checkPermissions(){
-        checkPermissions(PictureSelector.SELECT_REQUEST_CODE)
-    }
-
-    open fun checkPermissions(requestCode: Int){
-        if (ActivityCompat.checkSelfPermission(this,Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+    /*open fun checkPermissions(callBack:(result: ArrayList<LocalMedia?>?) -> Unit){
+        if (ActivityCompat.checkSelfPermission(this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, PERMISSIONS_STORAGE, REQUEST_PERMISSION_CODE)
         } else {
-            openAlbum(requestCode)
+            openAlbum(callBack)
         }
-    }*/
+    }
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
@@ -49,17 +51,20 @@ open class BaseActivity : AppCompatActivity()  {
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == REQUEST_PERMISSION_CODE){
-            if(grantResults.isNotEmpty()&&grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                openAlbum(PictureSelector.SELECT_REQUEST_CODE)
-            }
+        if(grantResults.isNotEmpty()&&grantResults[0] == PackageManager.PERMISSION_GRANTED){
+            openAlbum()
         }
     }
 
-    //启动相册的方法
-    open fun openAlbum(requestCode: Int) {
-        PictureSelector
-            .create(this, requestCode)
-            .selectPicture(false)
-    }
+    open fun openAlbum(callBack:(result: ArrayList<LocalMedia?>?) -> Unit){
+        PictureSelector.create(this)
+            .openSystemGallery(SelectMimeType.ofImage())
+            .setSelectionMode(SelectModeConfig.SINGLE)
+            .forSystemResult(object : OnResultCallbackListener<LocalMedia?> {
+                override fun onResult(result: ArrayList<LocalMedia?>?) {
+                    callBack(result)
+                }
+                override fun onCancel() {}
+            })
+    }*/
 }

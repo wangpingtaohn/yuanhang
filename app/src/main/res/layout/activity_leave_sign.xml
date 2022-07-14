@@ -402,20 +402,25 @@
                 android:textColor="@color/color_65"
                 android:textSize="15dp" />
 
-            <FrameLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
+                android:orientation="horizontal"
                 android:paddingVertical="10dp"
                 android:paddingLeft="16dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvMaterial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="104dp" />
 
                 <ImageView
                     android:id="@+id/ivMaterial"
                     android:layout_width="104dp"
                     android:layout_height="104dp"
                     android:src="@drawable/ic_add_img" />
-            </FrameLayout>
-
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -439,7 +444,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_annex"
-                    android:drawablePadding="@dimen/dp_4"
+                    android:drawablePadding="4dp"
                     android:src="@drawable/ic_annex"
                     android:text="ScreenShot_20220718_182207_c..."
                     android:textColor="@color/color_3a"
@@ -494,7 +499,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_annex"
-                    android:drawablePadding="@dimen/dp_4"
+                    android:drawablePadding="4dp"
                     android:src="@drawable/ic_annex"
                     android:text="ScreenShot_20220718_182207_c..."
                     android:textColor="@color/color_3a"
@@ -755,7 +760,7 @@
         android:layout_height="48dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="10dp"
-        android:layout_marginHorizontal="@dimen/dp_10"
+        android:layout_marginHorizontal="10dp"
         android:background="@drawable/shape_4286f5_radius8"
         android:gravity="center"
         android:text="预览表单"

@@ -1,19 +1,27 @@
 package com.office.hall.ui
 
+import android.Manifest
 import android.app.Dialog
-import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
+import android.view.View
+import androidx.core.app.ActivityCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import com.luck.picture.lib.basic.PictureSelector
+import com.luck.picture.lib.config.SelectMimeType
+import com.luck.picture.lib.config.SelectModeConfig
+import com.luck.picture.lib.entity.LocalMedia
+import com.luck.picture.lib.interfaces.OnResultCallbackListener
 import com.office.hall.R
+import com.office.hall.adapter.MaterialAdapter
 import com.office.hall.base.BaseActivity
 import com.office.hall.utils.SpUtils
-import com.wildma.pictureselector.PictureBean
-import com.wildma.pictureselector.PictureSelector
 import kotlinx.android.synthetic.main.activity_leave_sign.*
 import kotlinx.android.synthetic.main.activity_main.topBar
 import kotlinx.android.synthetic.main.layout_base_title.view.*
@@ -36,6 +44,10 @@ class LeaveSignActivity : BaseActivity() {
     private var preViewDialog: Dialog? = null
 
     private var mEnable = false
+
+    private val materialList = mutableListOf<LocalMedia?>()
+
+    private var materialAdapter: MaterialAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,17 +93,19 @@ class LeaveSignActivity : BaseActivity() {
         if (!TextUtils.isEmpty(track)){
             etTrack.text = Editable.Factory.getInstance().newEditable(track)
         }
-        val pic = SpUtils.getString(this, MATERIAL_PIC_PATH)
+        /*val pic = SpUtils.getString(this, MATERIAL_PIC_PATH)
         if (!TextUtils.isEmpty(pic)){
             Glide.with(this)
                 .load(pic)
                 .apply(RequestOptions.centerCropTransform()).into(ivMaterial)
-        }
+        }*/
+        initRv()
     }
+
 
     private fun initView(){
         tvPreview.setOnClickListener { showPreviewDialog() }
-        ivMaterial.setOnClickListener { openAlbum(REQUEST_MATERIAL_CODE) }
+        ivMaterial.setOnClickListener { checkPermissions()}
     }
 
     private fun initEditText(){
@@ -220,24 +234,72 @@ class LeaveSignActivity : BaseActivity() {
         preViewDialog?.show()
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        var pictureBean:PictureBean? = null
-        if (data != null) {
-            pictureBean =
-                data.getParcelableExtra(PictureSelector.PICTURE_RESULT)
+    private fun checkPermissions(){
+        if (ActivityCompat.checkSelfPermission(this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, PERMISSIONS_STORAGE, REQUEST_PERMISSION_CODE)
+        } else {
+            openAlbum()
         }
-        if (pictureBean == null){
-            return
-        }
-        val picPath = if (pictureBean.isCut) pictureBean.path else pictureBean.uri.toString()
-        if (TextUtils.isEmpty(picPath)){
-            return
-        }
-        SpUtils.putString(this,MATERIAL_PIC_PATH,picPath)
-        Glide.with(this)
-            .load(picPath)
-            .apply(RequestOptions.centerCropTransform()).into(ivMaterial)
     }
 
+    private fun initRv(){
+        val savePics = SpUtils.getString(applicationContext, MATERIAL_PIC_PATH)
+        if (!TextUtils.isEmpty(savePics)){
+            materialList.addAll(Gson().fromJson<MutableList<LocalMedia>>(savePics,object :TypeToken<MutableList<LocalMedia>>() {}.type))
+        }
+        ivMaterial.visibility = if (materialList.size < 3) View.VISIBLE else View.GONE
+        materialAdapter = MaterialAdapter(this@LeaveSignActivity,materialList)
+        with(rvMaterial){
+            layoutManager = LinearLayoutManager(this@LeaveSignActivity,LinearLayoutManager.HORIZONTAL,false)
+            adapter = materialAdapter
+        }
+        materialAdapter?.itemClickListener = object : MaterialAdapter.ItemClickListener{
+            override fun onItemClick(position: Int) {
+                materialList.removeAt(position)
+                notifyMaterialAdapter()
+            }
+        }
+    }
+
+    private fun notifyMaterialAdapter(){
+        ivMaterial.visibility = if (materialList.size < 3) View.VISIBLE else View.GONE
+        materialAdapter?.notifyDataSetChanged()
+        val paths = Gson().toJson(materialList)
+        SpUtils.putString(applicationContext,MATERIAL_PIC_PATH,paths)
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if(grantResults.isNotEmpty()&&grantResults[0] == PackageManager.PERMISSION_GRANTED){
+            openAlbum()
+        }
+    }
+
+    private fun openAlbum(){
+        PictureSelector.create(this)
+            .openSystemGallery(SelectMimeType.ofImage())
+            .setSelectionMode(SelectModeConfig.MULTIPLE)
+            .forSystemResult(object : OnResultCallbackListener<LocalMedia?> {
+                override fun onResult(result: ArrayList<LocalMedia?>?) {
+                    if (result == null || result.isEmpty()){
+                        return
+                    }
+                    for (media in result){
+                        if (materialList.isEmpty() || materialList.size < 3){
+                            materialList.add(media)
+                        } else {
+                            break
+                        }
+                    }
+                    notifyMaterialAdapter()
+
+                }
+                override fun onCancel() {}
+            })
+    }
 }
