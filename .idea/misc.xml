@@ -4,17 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../layout/custom_preview.xml" value="0.178125" />
-        <entry key="..\:/Android_space/yuanhang/app/src/main/res/drawable/shape_4e81d5_radius20.xml" value="0.192" />
-        <entry key="..\:/Android_space/yuanhang/app/src/main/res/drawable/shape_b6_stoke_radius18.xml" value="0.192" />
-        <entry key="..\:/Android_space/yuanhang/app/src/main/res/drawable/shape_dc7929_stoke_radius18.xml" value="0.192" />
-        <entry key="..\:/Android_space/yuanhang/app/src/main/res/drawable/shape_f2_radius20.xml" value="0.165" />
-        <entry key="..\:/Android_space/yuanhang/app/src/main/res/layout/activity_main.xml" value="0.2640625" />
-        <entry key="..\:/Android_space/yuanhang/app/src/main/res/layout/activity_sign.xml" value="0.2401289282836422" />
-        <entry key="..\:/Android_space/yuanhang/app/src/main/res/layout/dialog_pic.xml" value="0.4475806451612903" />
-        <entry key="..\:/Android_space/yuanhang/app/src/main/res/layout/item_home.xml" value="0.4453125" />
-        <entry key="..\:/Android_space/yuanhang/app/src/main/res/layout/layout_base_title.xml" value="0.128739800543971" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/base_include_loading_new.xml" value="0.1515625" />
+        <entry key="app/src/main/res/layout/dialog_pic.xml" value="0.1" />
       </map>
     </option>
   </component>

@@ -11,6 +11,7 @@ import android.view.Window
 import android.view.WindowManager
 import android.widget.ImageView
 import com.bumptech.glide.Glide
+import com.weilin.screenshot.utils.ScreenUtils
 import kotlinx.android.synthetic.main.dialog_pic.*
 
 /**
@@ -43,6 +44,12 @@ class FullScreenDialog(
         if (TextUtils.isEmpty(name) || TextUtils.isEmpty(pic1) || TextUtils.isEmpty(pic2)) {
             return
         }
+        val lp1 = ivPic1.layoutParams
+        val lp2 = ivPic2.layoutParams
+        lp1.height = ScreenUtils.getScreenH(context) / 3
+        lp2.height = ScreenUtils.getScreenH(context) / 3
+        ivPic1.layoutParams = lp1
+        ivPic2.layoutParams = lp2
         tvName.text = name
         Glide.with(context).load(pic1).into(ivPic1)
         Glide.with(context).load(pic2).into(ivPic2)
