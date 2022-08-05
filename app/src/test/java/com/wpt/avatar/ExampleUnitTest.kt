@@ -1,4 +1,4 @@
-package com.office.hall
+package com.wpt.avatar
 
 import org.junit.Test
 

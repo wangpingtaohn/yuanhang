@@ -8,21 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="my_theme">#ededed</color>
-    <color name="color_f2">#f2f2f2</color>
-    <color name="color_85">#858585</color>
     <color name="color_89">#898989</color>
-    <color name="color_4e81d5">#4e81d5</color>
     <color name="color_e8">#e8e8e8</color>
-    <color name="color_65">#656565</color>
     <color name="color_8e">#8e8e8e</color>
-    <color name="color_63a379">#63a379</color>
-    <color name="color_e6">#e6e6e6</color>
-    <color name="color_b6">#b6b6b6</color>
     <color name="color_dc7927">#dc7927</color>
-    <color name="color_f2f5fa">#f2f5fa</color>
-    <color name="red">#ff0000</color>
-    <color name="color_3a">#3a3a3a</color>
-    <color name="color_5b2427">#5b2427</color>
-    <color name="color_4286f5">#4286f5</color>
-    <color name="color_666">#666666</color>
 </resources>

@@ -1,5 +1,3 @@
 <resources>
-    <string name="app_name">办事大厅</string>
-    <string name="agree_content">本人已知悉上述内容，承诺遵守学校防疫防控的相关要求。</string>
-    <string name="notify_content">同学你好！根据上级和学校最新防控防疫要求，出校期间不前往中高风险地区、封控区、管控区，不与来自上述地区的人员或新冠病毒干扰者接触，全程做好防护，两点 一线，不改变行程。密切关注疫情形势变化，如出行地调整为中高风险地区、封控区、管控区，及时报告且暂不返校，其他地区按要求返校。</string>
+    <string name="app_name">头像</string>
 </resources>
