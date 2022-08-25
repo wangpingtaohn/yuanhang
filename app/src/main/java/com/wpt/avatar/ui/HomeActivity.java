@@ -50,58 +50,16 @@ public class HomeActivity extends AppCompatActivity {
         ImageView ivLeft = findViewById(R.id.ivBack);
         ImageView ivMore = findViewById(R.id.ivMore);
         ivMore.setVisibility(View.GONE);
-        ivLeft.setVisibility(View.GONE);
         TextView tvTitle = findViewById(R.id.tvTitle);
-        tvTitle.setText("我的");
+        TextView tvBack = findViewById(R.id.tvBack);
+        tvTitle.setText("电子证件");
+        tvBack.setOnClickListener(v -> finish());
+        ivLeft.setOnClickListener(v -> finish());
     }
 
     private void initView(){
         ivAvatar = findViewById(R.id.sivAvatar);
-        ivAvatar.setOnClickListener(v -> showDialog());
-    }
-
-    private void showDialog(){
-        if (selectDialog == null){
-            selectDialog = new BottomSheetDialog(this);
-            selectDialog.setContentView(R.layout.dialog_select_pic);
-            Button btnAlbum = selectDialog.findViewById(R.id.btnAlbum);
-            Button btnCamera = selectDialog.findViewById(R.id.btnCamera);
-            Button btnNet = selectDialog.findViewById(R.id.btnNet);
-            Button btnCancel = selectDialog.findViewById(R.id.btnCancel);
-
-            btnAlbum.setOnClickListener(v -> {
-                selectDialog.dismiss();
-                openAlbum();
-            });
-            btnCamera.setOnClickListener(v -> {
-                selectDialog.dismiss();
-                openCamera();
-            });
-            btnNet.setOnClickListener(v -> {
-                selectDialog.dismiss();
-                showNetPic();
-            });
-            btnCancel.setOnClickListener(v -> selectDialog.dismiss());
-        }
-        selectDialog.show();
-    }
-
-    private void showNetPic(){
-        if (netPicDialog == null){
-            netPicDialog = new BottomSheetDialog(this);
-            netPicDialog.setContentView(R.layout.dialog_pic_rv);
-            RecyclerView rv = netPicDialog.findViewById(R.id.rvNet);
-            GridLayoutManager lp = new GridLayoutManager(this,2);
-//            LinearLayoutManager lp = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
-            rv.setLayoutManager(lp);
-            PicAdapter adapter = new PicAdapter(this, picUrl -> {
-                netPicDialog.dismiss();
-                showAvatar(picUrl);
-            });
-            rv.setAdapter(adapter);
-        }
-        netPicDialog.show();
-
+        ivAvatar.setOnClickListener(v -> openAlbum());
     }
 
     private void openAlbum(){

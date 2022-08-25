@@ -9,7 +9,12 @@
     <color name="white">#FFFFFFFF</color>
     <color name="my_theme">#ededed</color>
     <color name="color_89">#898989</color>
+    <color name="color_79">#797979</color>
     <color name="color_e8">#e8e8e8</color>
     <color name="color_8e">#8e8e8e</color>
     <color name="color_dc7927">#dc7927</color>
+    <color name="color_1874dc">#1874dc</color>
+    <color name="color_33A46A">#33A46A</color>
+    <color name="color_46">#464646</color>
+    <color name="color_4984b4">#4984B4</color>
 </resources>
