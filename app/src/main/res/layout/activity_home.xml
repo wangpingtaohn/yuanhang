@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_33A46A">
@@ -25,8 +26,8 @@
             android:layout_height="128dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="-6dp"
-            android:rotation="45"
             android:alpha="0.5"
+            android:rotation="45"
             android:src="@drawable/ic_logo"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -70,13 +71,13 @@
             app:layout_constraintTop_toTopOf="@id/sivAvatar" />
 
         <EditText
-            android:focusable="false"
-            android:focusableInTouchMode="false"
             android:id="@+id/etName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:background="@null"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:maxLines="1"
             android:text="李子婵"
             android:textColor="@color/color_46"
@@ -128,8 +129,8 @@
             android:background="@null"
             android:focusable="false"
             android:focusableInTouchMode="false"
-            android:maxLines="1"
             android:inputType="number"
+            android:maxLines="1"
             android:text="120040100428"
             android:textColor="@color/color_46"
             android:textSize="14dp"
@@ -140,60 +141,82 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        app:layout_constraintTop_toBottomOf="@+id/clUser"
+        android:layout_width="match_parent"
+        android:layout_height="468dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/bg_info"
-        android:layout_width="match_parent"
-        android:layout_height="468dp">
+        app:layout_constraintTop_toBottomOf="@+id/clUser">
 
         <TextClock
             android:id="@+id/tvTime"
             android:layout_width="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="80dp"
             android:format12Hour="yyyy-MM-dd hh:mm:ss"
             android:format24Hour="yyyy-MM-dd HH:mm:ss"
             android:gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:textColor="@color/color_79"
-            android:textSize="16dp" />
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
 
         <TextView
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/tvAuto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="60dp"
+            android:layout_marginBottom="50dp"
             android:text="每30秒自动刷新"
             android:textColor="@color/color_79"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
             android:textSize="12dp"
-            android:layout_marginBottom="50dp"
-            android:id="@+id/tvAuto"
-            android:layout_marginRight="60dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <TextView
             app:layout_constraintBottom_toBottomOf="parent"
-            android:text="点我刷新"
-            android:textColor="@color/color_4984b4"
-            app:layout_constraintLeft_toRightOf="@id/tvAuto"
-            android:textSize="12dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="50dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:text="点我刷新"
+            android:textColor="@color/color_4984b4"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/tvAuto" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View
-        android:id="@+id/rootView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="10dp"
+        android:id="@+id/etView"
         android:layout_width="100dp"
-        android:layout_height="100dp"/>
+        android:layout_height="100dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ImageView
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:id="@+id/ivPreview"
+        android:layout_width="match_parent"
+        android:layout_height="340dp"
+        app:layout_constraintTop_toBottomOf="@id/clUser"
+        android:scaleType="centerCrop"
+        android:layout_marginHorizontal="64dp"
+        tools:src="@drawable/ic_logo" />
+
+    <ImageView
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:id="@+id/ivClose"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/ic_close"
+        app:layout_constraintRight_toRightOf="@id/ivPreview"
+        app:layout_constraintTop_toTopOf="@id/ivPreview" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

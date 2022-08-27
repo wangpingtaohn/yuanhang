@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -48,7 +49,13 @@ public class HomeActivity extends AppCompatActivity {
 
     private ImageView ivLogo;
 
+    private ImageView ivPreview;
+
+    private ImageView ivClose;
+
     private View rootView;
+
+    private View etView;
 
     private boolean isEnable;
 
@@ -81,13 +88,26 @@ public class HomeActivity extends AppCompatActivity {
         ivAvatar = findViewById(R.id.sivAvatar);
         ivLogo = findViewById(R.id.ivLogo);
         rootView = findViewById(R.id.rootView);
+        etView = findViewById(R.id.etView);
         etName = findViewById(R.id.etName);
         etNumber = findViewById(R.id.etNumber);
-        ivAvatar.setOnClickListener(v -> openAlbum());
+        ivPreview = findViewById(R.id.ivPreview);
+        ivClose = findViewById(R.id.ivClose);
+        ivAvatar.setOnClickListener(v -> {
+            if (isEnable){
+                openAlbum();
+            } else {
+                showPreView();
+            }
+        });
 
-        rootView.setOnLongClickListener(v -> {
+        etView.setOnLongClickListener(v -> {
             setEditEnable();
             return false;
+        });
+
+        rootView.setOnClickListener(v -> {
+            hidePreView();
         });
 
         etName.addTextChangedListener(new TextWatcher() {
@@ -141,6 +161,17 @@ public class HomeActivity extends AppCompatActivity {
         if (!TextUtils.isEmpty(userNumber)){
             etNumber.setText(userNumber);
         }
+    }
+
+    private void showPreView(){
+        Log.d("===wpt===","showPreView");
+        ivPreview.setVisibility(View.VISIBLE);
+        ivClose.setVisibility(View.VISIBLE);
+    }
+
+    private void hidePreView(){
+        ivPreview.setVisibility(View.GONE);
+        ivClose.setVisibility(View.GONE);
     }
 
 
@@ -235,6 +266,7 @@ public class HomeActivity extends AppCompatActivity {
         if (TextUtils.isEmpty(picPath) || ivAvatar == null){
             return;
         }
+        Glide.with(this).load(picPath).into(ivPreview);
         Glide.with(this).load(picPath).into(ivAvatar);
         SpUtils.putString(this, PIC_KEY,picPath);
     }
