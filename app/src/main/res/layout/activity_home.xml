@@ -126,15 +126,15 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:background="@null"
-            android:maxLines="1"
-            android:text="120040100428"
-            android:textColor="@color/color_46"
             android:focusable="false"
             android:focusableInTouchMode="false"
+            android:maxLines="1"
+            android:inputType="number"
+            android:text="120040100428"
+            android:textColor="@color/color_46"
             android:textSize="14dp"
             app:layout_constraintLeft_toRightOf="@id/tvNumber"
             app:layout_constraintTop_toTopOf="@id/tvNumber" />
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
